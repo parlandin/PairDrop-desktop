@@ -1,6 +1,7 @@
 import { app, BrowserWindow } from "electron";
 import path, { join, resolve } from "path";
 import electronSquirrelStartup from "electron-squirrel-startup";
+import { session } from "electron";
 import "./app/server/app.js";
 
 // close the app if it's installed with squirrel installer (Windows)
@@ -21,11 +22,13 @@ const createWindow = () => {
       /*  preload: join(__dirname, "preload.js"), */
       sandbox: false,
       contextIsolation: true,
+      webviewTag: false,
     },
   });
 
+  mainWindow.webContents.setUserAgent("pairDrop-desk");
   mainWindow.loadURL(`http://localhost:3000/`);
-  // mainWindow.webContents.openDevTools()
+  mainWindow.webContents.openDevTools();
 
   mainWindow.maximize();
 };
