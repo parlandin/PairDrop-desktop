@@ -2,15 +2,19 @@
   "name": "pairdrop",
   "version": "1.10.7",
   "type": "module",
-  "description": "",
-  "main": "server/index.js",
+  "description": "pairdrop desktop app",
+  "main": "src/main/index.js",
   "scripts": {
-    "start": "node server/index.js",
-    "start:prod": "node server/index.js --rate-limit --auto-restart"
+    "start": "electron-forge start",
+    "start:electron": "electron .",
+    "start:prod": "node server/index.js --rate-limit --auto-restart",
+    "package": "electron-forge package",
+    "make": "electron-forge make"
   },
-  "author": "",
+  "author": "Pairdrop",
   "license": "ISC",
   "dependencies": {
+    "electron-squirrel-startup": "^1.0.0",
     "express": "^4.18.2",
     "express-rate-limit": "^7.1.5",
     "ua-parser-js": "^1.0.37",
@@ -19,5 +23,14 @@
   },
   "engines": {
     "node": ">=15"
+  },
+  "devDependencies": {
+    "@electron-forge/cli": "^7.3.1",
+    "@electron-forge/maker-deb": "^7.3.1",
+    "@electron-forge/maker-rpm": "^7.3.1",
+    "@electron-forge/maker-squirrel": "^7.3.1",
+    "@electron-forge/maker-zip": "^7.3.1",
+    "@electron-forge/plugin-auto-unpack-natives": "^7.3.1",
+    "electron": "^29.1.5"
   }
 }
