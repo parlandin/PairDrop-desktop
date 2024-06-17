@@ -31,6 +31,6 @@
     "@electron-forge/maker-squirrel": "^7.3.1",
     "@electron-forge/maker-zip": "^7.3.1",
     "@electron-forge/plugin-auto-unpack-natives": "^7.3.1",
-    "electron": "^29.1.5"
+    "electron": "^31.0.1"
   }
 }
